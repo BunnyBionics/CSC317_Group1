@@ -65,11 +65,25 @@ footer :first-child {
   margin: 1vw 0;
 }
 
-.imageTextBlock > * {
-  align-self: center;
-  width: 45vw;
-  padding: 1vw;
+.imageTextBlock {
+  display: flex;
+  gap: 1rem;                
 }
+
+.imageTextBlock > * {
+  flex: 1 1 0;             
+  min-width: 0;             
+  padding: 1rem;            
+  box-sizing: border-box;   
+}
+
+.imageTextBlock img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
 
 /* For brand/title bar above the nav */
 .brandbar {
@@ -85,9 +99,6 @@ footer :first-child {
   line-height: 1.2;
   margin-top: 25px;
   margin-bottom: 25px;
-
-  
-
 }
 
 .navbar {
@@ -133,11 +144,40 @@ footer :first-child {
   color: var(--color4);
 }
 
+.titled-list::before {
+  content: attr(data-title);
+  display: inline-block;             
+  font-weight: 700;
+  color: var(--color1);
+  margin: 0 0 .5rem;
+
+  text-decoration: underline;
+  text-decoration-color: var(--color2);
+  text-decoration-thickness: 2px;
+  text-underline-offset: .4rem;       
+}
+
+:is(ul) li::marker {
+  color: var(--color2);
+  font-weight: 700;
+}
+
+:is(ol) li::marker {
+  color: var(--color1);
+  font-weight: 700;
+  font-size: 0.85em; 
+}
+
+::selection {
+  background: var(--color2);
+  color: white;
+}
+
+
 /* separate settings for mobile */
 @media (max-width: 600px) {
   main { font-size: 1rem; }
 
-  /* header/nav mobile tweaks */
   .brandbar { padding: 0.6rem 0.75rem; }
   .navbar ul { padding: 0.4rem 0.5rem; gap: 0.4rem 0.6rem; }
   .navbar a { padding: 0.4rem 0.6rem; }
