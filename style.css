@@ -66,8 +66,7 @@ footer :first-child {
 }
 
 .imageTextBlock {
-  display: flex;
-  gap: 1rem;  
+  display: flex; 
   align-items: center;
 }
 .imageTextBlock > * {
