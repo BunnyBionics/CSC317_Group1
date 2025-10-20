@@ -12,6 +12,15 @@ body {
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "karla", sans-serif;
+}
+
 header {
   background-color: var(--color1);
   position: sticky;
@@ -23,25 +32,33 @@ main {
   /* flex: 1; */
   background-color: var(--color5);
   color: var(--color1);
-  font-size: 110%;
+  font-size: 1.3vw;
   padding: 1vw;
 }
 
 footer {
   background-color: var(--color1);
   color: var(--color4);
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+  padding: 1vw;
+}
+
+footer :first-child {
+  align-self: center;
+  width: 3vw;
 }
 
 .imageTextBlock {
   background-color: var(--color3);
   display: flex;
+  font-family: "zen old mincho", serif;
   margin: 1vw 0;
-  /* padding: 1vw; */
 }
 
 .imageTextBlock > * {
+  align-self: center;
   width: 45vw;
   padding: 1vw;
 }
@@ -50,7 +67,7 @@ footer {
   color: var(--color4);
 }
 
-.navbar h2 {
+.navbar > :first-child {
   padding-left: 5px;
 }
 
@@ -77,6 +94,10 @@ footer {
 
 /* separate settings for mobile */
 @media screen and (width < 600px), screen and (orientation: portrait) {
+  main {
+    font-size: 2vw;
+  }
+
   .imageTextBlock {
     display: grid;
     justify-items: center;
