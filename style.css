@@ -59,19 +59,26 @@ footer :first-child {
 }
 
 .imageTextBlock {
-  background-color: var(--color3);
   display: flex;
-  font-family: "zen old mincho", serif;
-  margin: 1vw 0;
+  gap: 1rem;                
 }
 
 .imageTextBlock > * {
-  align-self: center;
-  width: 45vw;
-  padding: 1vw;
+  flex: 1 1 0;              
+  min-width: 0;             /* prevents long text from forcing overflow */
+  padding: 1rem;            
+  box-sizing: border-box;   /* include padding in the width calc */
 }
 
-/* For brand/title bar above the nav */
+.imageTextBlock img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* For brand/title bar above the navbar*/
 .brandbar {
   background-color: var(--color1);
   color: var(--color4);
@@ -85,9 +92,6 @@ footer :first-child {
   line-height: 1.2;
   margin-top: 25px;
   margin-bottom: 25px;
-
-  
-
 }
 
 .navbar {
