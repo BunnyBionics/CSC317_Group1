@@ -67,16 +67,15 @@ footer :first-child {
 
 .imageTextBlock {
   display: flex;
-  gap: 1rem;                
+  gap: 1rem;  
+  align-items: center;
 }
-
 .imageTextBlock > * {
   flex: 1 1 0;             
   min-width: 0;             
   padding: 1rem;            
   box-sizing: border-box;   
 }
-
 .imageTextBlock img {
   max-width: 100%;
   height: auto;
@@ -185,6 +184,7 @@ footer :first-child {
   .imageTextBlock {
     display: grid;
     justify-items: center;
+    align-items: center;
   }
   .imageTextBlock > * {
     width: 100%;
